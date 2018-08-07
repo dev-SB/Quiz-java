@@ -67,7 +67,7 @@ public class LoginController {
             e.printStackTrace();
         }
     }
-
+//todo: stringproperty can update data in realtime and also a listener can be attached with it
     private boolean checkInput() {
         if (!nameField.getText().isEmpty() && !rollNoField.getText().isEmpty()) {
             System.out.println("not empty");

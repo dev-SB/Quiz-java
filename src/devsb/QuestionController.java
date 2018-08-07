@@ -1,11 +1,7 @@
 package devsb;
 
-import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -14,10 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 
-import javax.swing.*;
-import javax.swing.plaf.synth.SynthLookAndFeel;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -28,6 +21,7 @@ public class QuestionController implements Initializable {
     private static final int FIVEMIN = 10;
     private Timeline timeline;
     private Integer time = FIVEMIN;
+    private ArrayList<Question> questionList = new ArrayList<>();
     private ArrayList<Integer> bookmarkQ = new ArrayList<>();
     @FXML
     private Label timer, maxMarks, questionNo, question;
@@ -100,7 +94,7 @@ public class QuestionController implements Initializable {
     }
 
     private void checkQuestionNo() {
-            resetOptions();
+        resetOptions();
         if (currQuestionNo < 9) {
             updateQuestionNo();
         } else {
@@ -112,12 +106,31 @@ public class QuestionController implements Initializable {
         updateQuestionNo();
         finishButton.setVisible(true);
         nextButton.setVisible(false);
+        updateQuestion();
     }
 
     private void updateQuestionNo() {
         currQuestionNo++;
         progress.setProgress(currQuestionNo / 11.0);
         questionNo.setText("Question #" + currQuestionNo);
+        updateQuestion();
+    }
+
+    private void getQuestions() {
+
+        try {
+            QuestionExtractor questionExtractor = new QuestionExtractor("com.mysql.jdbc.Driver", "jdbc:mysql" +
+                    "://localhost:3306/quiz?useSSL=false", "root", "root");
+            questionList = questionExtractor.getQuestionList();
+            questionExtractor.disconnect();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    private void updateQuestion() {
+        System.out.println(questionList.get(0).getQues());
     }
 
     private void updateTime() {
@@ -149,6 +162,7 @@ public class QuestionController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         currQuestionNo = 0;
+        getQuestions();
         finishButton.setVisible(false);
         updateQuestionNo();
         updateTime();
