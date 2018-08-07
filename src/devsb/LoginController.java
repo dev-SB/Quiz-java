@@ -47,7 +47,7 @@ public class LoginController {
             root = FXMLLoader.load(getClass().getResource("leaderboard.fxml"));
             Stage instructionStage = new Stage();
             instructionStage.setTitle("Leaderboard");
-            instructionStage.setScene(new Scene(root, 100, 200));
+            instructionStage.setScene(new Scene(root, 400, 400));
             instructionStage.show();
         } catch (Exception e) {
             e.printStackTrace();
@@ -60,7 +60,7 @@ public class LoginController {
             root = FXMLLoader.load(getClass().getResource("instructions.fxml"));
             Stage instructionStage = new Stage();
             instructionStage.setTitle("Instructions");
-            instructionStage.setScene(new Scene(root, 100, 200));
+            instructionStage.setScene(new Scene(root, 400, 400));
             instructionStage.show();
             ((Node) (event.getSource())).getScene().getWindow().hide();
         } catch (Exception e) {

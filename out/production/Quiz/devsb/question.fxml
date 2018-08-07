@@ -9,20 +9,21 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="devsb.QuestionController">
    <children>
-      <Label fx:id="questionNo" layoutX="23.0" layoutY="42.0" text="Label" />
-      <Label fx:id="question" layoutX="73.0" layoutY="42.0" text="Label" />
-      <RadioButton fx:id="opOne" layoutX="30.0" layoutY="109.0" mnemonicParsing="false" text="RadioButton">
+      <Label fx:id="questionNo" layoutX="51.0" layoutY="68.0" text="Label" />
+      <Label fx:id="question" layoutX="270.0" layoutY="77.0" text="Label" />
+      <RadioButton fx:id="opOne" layoutX="69.0" layoutY="126.0" mnemonicParsing="false" text="RadioButton">
          <toggleGroup>
             <ToggleGroup fx:id="optionsGroup" />
          </toggleGroup></RadioButton>
-      <RadioButton fx:id="opTwo" layoutX="248.0" layoutY="109.0" mnemonicParsing="false" text="RadioButton" toggleGroup="$optionsGroup" />
-      <RadioButton fx:id="opThree" layoutX="30.0" layoutY="169.0" mnemonicParsing="false" text="RadioButton" toggleGroup="$optionsGroup" />
-      <RadioButton fx:id="opFour" layoutX="248.0" layoutY="169.0" mnemonicParsing="false" text="RadioButton" toggleGroup="$optionsGroup" />
+      <RadioButton fx:id="opTwo" layoutX="240.0" layoutY="126.0" mnemonicParsing="false" text="RadioButton" toggleGroup="$optionsGroup" />
+      <RadioButton fx:id="opThree" layoutX="68.0" layoutY="178.0" mnemonicParsing="false" text="RadioButton" toggleGroup="$optionsGroup" />
+      <RadioButton fx:id="opFour" layoutX="240.0" layoutY="178.0" mnemonicParsing="false" text="RadioButton" toggleGroup="$optionsGroup" />
       <Button fx:id="nextButton" layoutX="73.0" layoutY="265.0" mnemonicParsing="false" onAction="#onNextClicked" prefHeight="25.0" prefWidth="76.0" text="Next" />
-      <Button fx:id="resetButton" layoutX="248.0" layoutY="240.0" mnemonicParsing="false" onAction="#onResetClicked" text="Reset" />
-      <Button fx:id="bookmarkButton" layoutX="352.0" layoutY="265.0" mnemonicParsing="false" onAction="#onBookmarkClicked" text="Bookmark" />
+      <Button fx:id="resetButton" layoutX="170.0" layoutY="265.0" mnemonicParsing="false" onAction="#onResetClicked" prefHeight="25.0" prefWidth="70.0" text="Reset" />
+      <Button fx:id="bookmarkButton" layoutX="263.0" layoutY="265.0" mnemonicParsing="false" onAction="#onBookmarkClicked" text="Bookmark" />
       <ProgressBar fx:id="progress" layoutY="368.0" prefHeight="18.0" prefWidth="600.0" progress="0.0" />
       <Label fx:id="timer" layoutX="545.0" layoutY="14.0" text="Label" />
-      <Label fx:id="maxMarks" layoutX="23.0" layoutY="23.0" text="Label" />
+      <Label fx:id="maxMarks" layoutX="51.0" layoutY="22.0" text="Label" />
+      <Button fx:id="finishButton" layoutX="358.0" layoutY="265.0" mnemonicParsing="false" onAction="#onFinishClicked" prefHeight="25.0" prefWidth="76.0" text="Finish" />
    </children>
 </AnchorPane>

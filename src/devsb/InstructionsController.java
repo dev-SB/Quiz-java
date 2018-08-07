@@ -23,7 +23,7 @@ public class InstructionsController {
             root = FXMLLoader.load(getClass().getResource("question.fxml"));
             Stage instructionStage = new Stage();
             instructionStage.setTitle("Leaderboard");
-            instructionStage.setScene(new Scene(root, 100, 200));
+            instructionStage.setScene(new Scene(root, 400, 400));
             instructionStage.show();
             ((Node) (event.getSource())).getScene().getWindow().hide();
         } catch (Exception e) {

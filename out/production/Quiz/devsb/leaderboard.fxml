@@ -16,7 +16,6 @@
             <TableColumn prefWidth="75.0" text="C2" />
         </columns>
       </TableView>
-      <Button fx:id="backButton" layoutX="173.0" layoutY="301.0" mnemonicParsing="false" text="Back" />
-      <Button fx:id="exitButton" layoutX="357.0" layoutY="301.0" mnemonicParsing="false" text="Exit" />
+      <Button fx:id="backButton" layoutX="173.0" layoutY="301.0" mnemonicParsing="false" onAction="#onBackClicked" text="Back" />
    </children>
 </AnchorPane>

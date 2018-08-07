@@ -8,7 +8,7 @@
    <children>
       <Button fx:id="leaderboardResButton" layoutX="141.0" layoutY="322.0" mnemonicParsing="false" onAction="#onLeaderResClicked" text="Button" />
       <Label layoutX="113.0" layoutY="110.0" text="Correct Answers" />
-      <Label layoutX="266.0" layoutY="14.0" text="Label" />
+      <Label layoutX="77.0" layoutY="20.0" text="Label" />
       <Label layoutX="114.0" layoutY="146.0" text="Wrong Answers" />
       <Label layoutX="126.0" layoutY="192.0" text="Score" />
       <Label layoutX="396.0" layoutY="102.0" text="Label" />
