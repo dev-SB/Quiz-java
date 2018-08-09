@@ -25,7 +25,7 @@ import java.util.ResourceBundle;
 
 public class QuestionController implements Initializable {
     private int currQuestionNo = 0;
-    private static final int FIVEMIN = 3;
+    private static final int FIVEMIN = 120;
     private Timeline timeline;
     // private Integer time = FIVEMIN;
     private ArrayList<Question> questionList = new ArrayList<>();
@@ -137,7 +137,8 @@ public class QuestionController implements Initializable {
         LoginController lc = new LoginController();
         User userDetails = lc.getNewUser();
         userDetails.setScore(score);
-        // userDetails.setTimeLeft("0");
+        userDetails.setTimeLeft(String.valueOf(time.getValue().toString()));
+        System.out.println(Integer.parseInt(time.getValue().toString()));
         Parent root;
         try {
 

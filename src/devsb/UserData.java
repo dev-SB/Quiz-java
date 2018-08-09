@@ -1,7 +1,12 @@
 package devsb;
 
+import javafx.beans.InvalidationListener;
+import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
+import javafx.collections.ObservableList;
+
 import java.sql.*;
-import java.util.ArrayList;
+import java.util.*;
 
 public class UserData {
     private Connection connection;
@@ -29,8 +34,8 @@ public class UserData {
         }
     }
 
-    public ArrayList<User> getData() throws SQLException {
-        ArrayList<User> userList = new ArrayList<>();
+    public ObservableList<User> getData() throws SQLException {
+        ObservableList<User> userList= FXCollections.observableArrayList();
         try {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("select * from leaderboard order by score desc,time desc ");
