@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b35d6acc-a272-440b-a13d-22f882bac8ea.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b35d6acc-a272-440b-a13d-22f882bac8ea.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Quiz/devsb/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Quiz/devsb/LoginController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/devsb/LeaderboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/devsb/LeaderboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/devsb/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/devsb/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/devsb/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/devsb/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/devsb/QuestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/devsb/QuestionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/devsb/QuestionExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/devsb/QuestionExtractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/devsb/ResultController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/devsb/ResultController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/devsb/UserData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/devsb/UserData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/devsb/instructions.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/devsb/instructions.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/devsb/result.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/devsb/result.fxml" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,13 +49,6 @@
         <item name="quiz@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="quiz: schema" type="c314c289:MysqlImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="quiz@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="quiz: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="leaderboard: table" type="98d5ac3d:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -96,6 +91,26 @@
     <ui_properties converted="true" />
     <breakpoint_rules converted="true" />
   </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/src/devsb/result.fxml">
+                <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+                <provider editor-type-id="text-editor">
+                  <state relative-caret-position="306">
+                    <caret line="17" column="14" lean-forward="true" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-924929822">
       <usages-collector id="statistics.lifecycle.project">
@@ -115,43 +130,43 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cell" value="2" />
+          <entry key="cell" value="341" />
           <entry key="dummy" value="17" />
-          <entry key="fxml" value="23" />
-          <entry key="java" value="8249" />
-          <entry key="sql" value="76" />
+          <entry key="fxml" value="43" />
+          <entry key="java" value="11162" />
+          <entry key="sql" value="100" />
           <entry key="txt" value="20" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="8249" />
+          <entry key="JAVA" value="11162" />
           <entry key="PLAIN_TEXT" value="37" />
           <entry key="SQL" value="37" />
-          <entry key="Scratch" value="41" />
-          <entry key="XML" value="23" />
+          <entry key="Scratch" value="404" />
+          <entry key="XML" value="43" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="fxml" value="57" />
+          <entry key="fxml" value="68" />
           <entry key="html" value="2" />
           <entry key="iml" value="4" />
-          <entry key="java" value="99" />
-          <entry key="leaderboard" value="9" />
-          <entry key="questions" value="3" />
-          <entry key="sql" value="10" />
+          <entry key="java" value="129" />
+          <entry key="leaderboard" value="14" />
+          <entry key="questions" value="7" />
+          <entry key="sql" value="12" />
           <entry key="xml" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Database Element" value="12" />
+          <entry key="Database Element" value="21" />
           <entry key="HTML" value="2" />
           <entry key="IDEA_MODULE" value="4" />
-          <entry key="JAVA" value="99" />
-          <entry key="Scratch" value="10" />
-          <entry key="XML" value="65" />
+          <entry key="JAVA" value="129" />
+          <entry key="Scratch" value="12" />
+          <entry key="XML" value="76" />
         </counts>
       </usages-collector>
     </session>
@@ -161,23 +176,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/devsb/LoginController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="94" column="30" selection-start-line="94" selection-start-column="30" selection-end-line="94" selection-end-column="30" />
-              <folding>
-                <element signature="e#3133#3134#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/devsb/Main.java">
+        <entry file="file://$PROJECT_DIR$/src/devsb/QuestionController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="33" column="63" selection-start-line="33" selection-start-column="63" selection-end-line="33" selection-end-column="63" />
+            <state relative-caret-position="445">
+              <caret line="147" column="65" selection-start-line="147" selection-start-column="65" selection-end-line="147" selection-end-column="65" />
             </state>
           </provider>
         </entry>
@@ -193,6 +196,13 @@
     </option>
   </component>
   <component name="FindInProjectRecents">
+    <findStrings>
+      <find>System.out</find>
+      <find>currQues</find>
+      <find>Alert</find>
+      <find>time</find>
+      <find>alert</find>
+    </findStrings>
     <dirStrings>
       <dir>H:\Projects-Java\Quiz\src\devsb</dir>
     </dirStrings>
@@ -219,20 +229,21 @@
         <option value="$PROJECT_DIR$/src/sample/InstructionsController.java" />
         <option value="$PROJECT_DIR$/src/devsb/a.fxml" />
         <option value="$PROJECT_DIR$/src/devsb/leaderboard.fxml" />
-        <option value="$PROJECT_DIR$/src/devsb/ResultController.java" />
-        <option value="$PROJECT_DIR$/src/devsb/InstructionsController.java" />
-        <option value="$PROJECT_DIR$/src/devsb/instructions.fxml" />
         <option value="$PROJECT_DIR$/src/devsb/question.fxml" />
-        <option value="$PROJECT_DIR$/src/devsb/result.fxml" />
         <option value="$PROJECT_DIR$/src/devsb/Question.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/b35d6acc-a272-440b-a13d-22f882bac8ea/console.sql" />
-        <option value="$PROJECT_DIR$/src/devsb/QuestionExtractor.java" />
-        <option value="$PROJECT_DIR$/src/devsb/QuestionController.java" />
-        <option value="$PROJECT_DIR$/src/devsb/LeaderboardController.java" />
         <option value="$PROJECT_DIR$/src/devsb/User.java" />
         <option value="$PROJECT_DIR$/src/devsb/UserData.java" />
+        <option value="$PROJECT_DIR$/src/devsb/InstructionsController.java" />
+        <option value="$PROJECT_DIR$/src/devsb/instructions.fxml" />
+        <option value="$PROJECT_DIR$/src/devsb/LeaderboardController.java" />
         <option value="$PROJECT_DIR$/src/devsb/LoginController.java" />
+        <option value="$PROJECT_DIR$/src/devsb/Temp.java" />
+        <option value="$PROJECT_DIR$/src/devsb/QuestionExtractor.java" />
+        <option value="$PROJECT_DIR$/src/devsb/result.fxml" />
+        <option value="$PROJECT_DIR$/src/devsb/ResultController.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/b35d6acc-a272-440b-a13d-22f882bac8ea/console.sql" />
         <option value="$PROJECT_DIR$/src/devsb/Main.java" />
+        <option value="$PROJECT_DIR$/src/devsb/QuestionController.java" />
       </list>
     </option>
   </component>
@@ -243,11 +254,11 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-8" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="55" />
     <option name="y" value="-8" />
-    <option name="width" value="1386" />
-    <option name="height" value="788" />
+    <option name="width" value="1378" />
+    <option name="height" value="773" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectReloadState">
@@ -311,7 +322,7 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1533671952386" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1533830266693" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$APPLICATION_CONFIG_DIR$/jdbc-drivers/MySQL Connector/J/5.1.46/mysql-connector-java-5.1.46.jar!/" />
@@ -333,7 +344,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -364,6 +375,20 @@
       </extension>
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Temp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="devsb.Temp" />
+      <module name="Quiz" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="devsb.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -403,6 +428,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.Temp" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Temp" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -421,12 +455,12 @@
       <workItem from="1533637943359" duration="83000" />
       <workItem from="1533647867259" duration="15507000" />
       <workItem from="1533741758026" duration="724000" />
-      <workItem from="1533790432672" duration="4761000" />
+      <workItem from="1533790432672" duration="22982000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53204000" />
+    <option name="totallyTimeSpent" value="71425000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -437,14 +471,14 @@
       <window_info id="UI Designer" order="2" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Designer" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.6703755" weight="0.26172465" />
+      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.6703755" visible="true" weight="0.20726173" />
       <window_info id="Structure" order="6" weight="0.25" />
       <window_info id="Favorites" order="7" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.28389156" />
       <window_info anchor="bottom" id="Database Changes" order="1" weight="0.32854864" />
       <window_info anchor="bottom" id="Message" order="2" />
       <window_info anchor="bottom" id="Find" order="3" weight="0.32854864" />
-      <window_info active="true" anchor="bottom" id="Run" order="4" visible="true" weight="0.34130782" />
+      <window_info anchor="bottom" id="Run" order="4" weight="0.46411484" />
       <window_info anchor="bottom" id="Debug" order="5" weight="0.39872408" />
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
@@ -464,7 +498,7 @@
       <window_info anchor="right" id="Ant Build" order="4" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="5" weight="0.25" />
       <window_info anchor="right" id="JetGradle" order="6" />
-      <window_info anchor="right" id="Database" order="7" visible="true" weight="0.19591528" />
+      <window_info anchor="right" id="Database" order="7" weight="0.19591528" />
       <window_info anchor="right" id="Palette" order="8" />
       <window_info anchor="right" id="Maven Projects" order="9" />
     </layout>
@@ -565,11 +599,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/devsb/result.fxml">
+    <entry file="file://$PROJECT_DIR$/Quiz.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/devsb/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="38" column="19" lean-forward="true" selection-start-line="38" selection-start-column="19" selection-end-line="38" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/devsb/instructions.fxml">
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
       <provider editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="14" lean-forward="true" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+        <state relative-caret-position="198">
+          <caret line="11" column="69" lean-forward="true" selection-start-line="11" selection-start-column="69" selection-end-line="11" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/devsb/leaderboard.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="157" lean-forward="true" selection-start-line="7" selection-start-column="157" selection-end-line="7" selection-end-column="157" />
         </state>
       </provider>
     </entry>
@@ -581,15 +633,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/devsb/ResultController.java">
+    <entry file="file://$PROJECT_DIR$/src/devsb/Temp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="432">
+          <caret line="30" column="13" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="30" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Quiz.iml">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.base/com/sun/javafx/event/EventHandlerManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="190" selection-start-line="190" selection-end-line="190" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/devsb/InstructionsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
     </entry>
     <entry file="das://b35d6acc-a272-440b-a13d-22f882bac8ea/schema/quiz/table/questions">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -598,100 +661,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.fxml/javafx/fxml/FXMLLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="3121" selection-start-line="3121" selection-end-line="3121" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/b35d6acc-a272-440b-a13d-22f882bac8ea/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/devsb/QuestionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2214">
-          <caret line="123" column="49" selection-start-line="123" selection-start-column="49" selection-end-line="123" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/devsb/QuestionExtractor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+        <state relative-caret-position="396">
+          <caret line="39" column="31" lean-forward="true" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/devsb/Question.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1188">
-          <caret line="66" selection-start-line="66" selection-end-line="66" />
+        <state relative-caret-position="-249">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/devsb/LeaderboardController.java">
+    <entry file="file://$PROJECT_DIR$/src/devsb/ResultController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="9" column="52" selection-start-line="9" selection-start-column="52" selection-end-line="9" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/devsb/leaderboard.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="157" lean-forward="true" selection-start-line="7" selection-start-column="157" selection-end-line="7" selection-end-column="157" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/devsb/instructions.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/devsb/InstructionsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/devsb/login.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="193" lean-forward="true" selection-start-line="9" selection-start-column="193" selection-end-line="9" selection-end-column="193" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/devsb/UserData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/devsb/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="38" column="19" lean-forward="true" selection-start-line="38" selection-start-column="19" selection-end-line="38" selection-end-column="19" />
-          <folding>
-            <element signature="e#617#618#0" expanded="true" />
-            <element signature="e#657#658#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/devsb/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="94" column="30" selection-start-line="94" selection-start-column="30" selection-end-line="94" selection-end-column="30" />
-          <folding>
-            <element signature="e#3133#3134#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="342">
+          <caret line="26" column="75" selection-start-line="26" selection-start-column="75" selection-end-line="26" selection-end-column="75" />
         </state>
       </provider>
     </entry>
@@ -702,10 +689,72 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/b35d6acc-a272-440b-a13d-22f882bac8ea/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/devsb/LeaderboardController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/devsb/UserData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="62">
+          <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/devsb/result.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="14" lean-forward="true" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.fxml/javafx/fxml/FXMLLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="2572" selection-start-line="2572" selection-end-line="2572" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/devsb/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+          <folding>
+            <element signature="e#3103#3104#0" expanded="true" />
+            <element signature="e#3133#3134#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/devsb/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="33" column="63" selection-start-line="33" selection-start-column="63" selection-end-line="33" selection-end-column="63" />
+        <state relative-caret-position="270">
+          <caret line="23" column="49" lean-forward="true" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/devsb/login.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="193" lean-forward="true" selection-start-line="9" selection-start-column="193" selection-end-line="9" selection-end-column="193" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/devsb/QuestionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="147" column="65" selection-start-line="147" selection-start-column="65" selection-end-line="147" selection-end-column="65" />
         </state>
       </provider>
     </entry>

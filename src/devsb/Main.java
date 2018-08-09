@@ -24,15 +24,15 @@ public class Main extends Application {
         LoginController lc=new LoginController();
         User userDetails=lc.getNewUser();
         System.out.println("print"+userDetails.getName()+userDetails.getRollNo());
-        saveUserData(userDetails.getName(),userDetails.getRollNo());
-
+        saveUserData(userDetails.getName(),userDetails.getRollNo(),userDetails.getScore(),userDetails.getTimeLeft());
+//todo: save score and timeleft
     }
-    private void saveUserData(String name, String rollNo) {
+    private void saveUserData(String name, String rollNo,int score,String time) {
         try {
             userData = new UserData("com.mysql.jdbc.Driver", "jdbc:mysql" +
                     "://localhost:3306/quiz?useSSL=false", "root", "root");
             System.out.println("save user data"+name+" "+rollNo);
-            userData.addData(name,rollNo);
+            userData.addData(name,rollNo,score,time);
 
         } catch (Exception e) {
             e.printStackTrace();
