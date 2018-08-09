@@ -8,36 +8,44 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-    public UserData userData;
+    public static UserData userData;
+
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
         primaryStage.setTitle("Quiz");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setScene(new Scene(root, 400, 400));
         primaryStage.show();
     }
 
     @Override
     public void stop() throws Exception {
         super.stop();
-
-        LoginController lc=new LoginController();
-        User userDetails=lc.getNewUser();
-        System.out.println("print"+userDetails.getName()+userDetails.getRollNo());
-        saveUserData(userDetails.getName(),userDetails.getRollNo(),userDetails.getScore(),userDetails.getTimeLeft());
+        if (!LeaderboardController.isDataSaved && QuestionController.isQuizAttempted) {
+            saveDataInLeaderboard();
+        }
 //todo: save score and timeleft
     }
-    private void saveUserData(String name, String rollNo,int score,String time) {
+
+    public static void saveDataInLeaderboard() {
+        LoginController lc = new LoginController();
+        User userDetails = lc.getNewUser();
+        System.out.println("print" + userDetails.getName() + userDetails.getRollNo());
+        saveUserData(userDetails.getName(), userDetails.getRollNo(), userDetails.getScore(), userDetails.getTimeLeft());
+    }
+
+    private static void saveUserData(String name, String rollNo, int score, String time) {
         try {
             userData = new UserData("com.mysql.jdbc.Driver", "jdbc:mysql" +
                     "://localhost:3306/quiz?useSSL=false", "root", "root");
-            System.out.println("save user data"+name+" "+rollNo);
-            userData.addData(name,rollNo,score,time);
+            System.out.println("save user data" + name + " " + rollNo);
+            userData.addData(name, rollNo, score, time);
 
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
     public static void main(String[] args) {
         launch(args);
     }

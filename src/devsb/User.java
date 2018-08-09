@@ -4,11 +4,23 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 public class User {
+    private SimpleIntegerProperty pos=new SimpleIntegerProperty();
     private SimpleStringProperty name = new SimpleStringProperty();
     private SimpleStringProperty timeLeft = new SimpleStringProperty();
     private SimpleStringProperty rollNo = new SimpleStringProperty();
     private SimpleIntegerProperty score = new SimpleIntegerProperty();
 
+    public int getPos() {
+        return pos.get();
+    }
+
+    public SimpleIntegerProperty posProperty() {
+        return pos;
+    }
+
+    public void setPos(int pos) {
+        this.pos.set(pos);
+    }
 
     public String getName() {
         return name.get();
@@ -46,7 +58,8 @@ public class User {
 
     }
 
-    public User(String name, String rollNo, int score, String timeLeft) {
+    public User(int pos,String name, String rollNo, int score, String timeLeft) {
+        this.pos.set(pos);
         this.score.set(score);
         this.timeLeft.set(timeLeft);
         this.rollNo.set(rollNo);

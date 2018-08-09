@@ -39,12 +39,14 @@ public class UserData {
         try {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("select * from leaderboard order by score desc,time desc ");
+            int pos=0;
             while (resultSet.next()) {
+                pos++;
                 String name = resultSet.getString("name");
                 String rollNo = resultSet.getString("roll_no");
                 int score = resultSet.getInt("score");
                 String time = resultSet.getString("time");
-                User user = new User(name, rollNo, score, time);
+                User user = new User(pos,name, rollNo, score, time);
                 userList.add(user);
             }
         } catch (Exception e) {

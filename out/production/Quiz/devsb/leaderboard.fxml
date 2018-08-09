@@ -7,15 +7,15 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="devsb.LeaderboardController">
    <children>
-      <TableView fx:id="leaderboardTable" layoutX="155.0" layoutY="53.0" prefHeight="200.0" prefWidth="385.0">
+      <TableView fx:id="leaderboardTable" layoutX="-3.0" layoutY="1.0" prefHeight="284.0" prefWidth="580.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="16.0">
         <columns>
           <TableColumn fx:id="pos" prefWidth="75.0" text="Position" />
-          <TableColumn fx:id="name" prefWidth="75.0" text="Name" />
-            <TableColumn fx:id="rollNo" prefWidth="75.0" text="Roll Number" />
-            <TableColumn fx:id="score" prefWidth="75.0" text="Score" />
-            <TableColumn fx:id="timeLeft" prefWidth="75.0" text="Time Left" />
+          <TableColumn fx:id="name" prefWidth="193.0" text="Name" />
+            <TableColumn fx:id="rollNo" prefWidth="143.0" text="Roll Number" />
+            <TableColumn fx:id="score" prefWidth="49.0" text="Score" />
+            <TableColumn fx:id="timeLeft" prefWidth="105.0" text="Time Left" />
         </columns>
       </TableView>
-      <Button fx:id="backButton" layoutX="173.0" layoutY="301.0" mnemonicParsing="false" onAction="#onBackClicked" text="Back" />
+      <Button fx:id="backButton" layoutX="280.0" layoutY="334.0" mnemonicParsing="false" onAction="#onBackClicked" text="Back" AnchorPane.bottomAnchor="41.0" AnchorPane.leftAnchor="280.0" AnchorPane.rightAnchor="279.0" AnchorPane.topAnchor="334.0" />
    </children>
 </AnchorPane>

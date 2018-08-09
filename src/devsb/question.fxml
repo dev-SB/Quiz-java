@@ -7,23 +7,34 @@
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="devsb.QuestionController">
+<AnchorPane prefHeight="400.0" prefWidth="699.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="devsb.QuestionController">
    <children>
       <Label fx:id="questionNo" layoutX="51.0" layoutY="68.0" text="Label" />
-      <Label fx:id="question" layoutX="270.0" layoutY="77.0" text="Label" />
-      <RadioButton fx:id="opOne" layoutX="69.0" layoutY="126.0" mnemonicParsing="false" text="RadioButton">
+      <Label fx:id="question" layoutX="127.0" layoutY="68.0" text="Label" />
+      <RadioButton fx:id="opOne" layoutX="51.0" layoutY="118.0" mnemonicParsing="false" text="RadioButton">
          <toggleGroup>
             <ToggleGroup fx:id="optionsGroup" />
          </toggleGroup></RadioButton>
-      <RadioButton fx:id="opTwo" layoutX="240.0" layoutY="126.0" mnemonicParsing="false" text="RadioButton" toggleGroup="$optionsGroup" />
-      <RadioButton fx:id="opThree" layoutX="68.0" layoutY="178.0" mnemonicParsing="false" text="RadioButton" toggleGroup="$optionsGroup" />
-      <RadioButton fx:id="opFour" layoutX="240.0" layoutY="178.0" mnemonicParsing="false" text="RadioButton" toggleGroup="$optionsGroup" />
-      <Button fx:id="nextButton" layoutX="73.0" layoutY="265.0" mnemonicParsing="false" onAction="#onNextClicked" prefHeight="25.0" prefWidth="76.0" text="Next" />
-      <Button fx:id="resetButton" layoutX="170.0" layoutY="265.0" mnemonicParsing="false" onAction="#onResetClicked" prefHeight="25.0" prefWidth="70.0" text="Reset" />
-      <Button fx:id="bookmarkButton" layoutX="263.0" layoutY="265.0" mnemonicParsing="false" onAction="#onBookmarkClicked" text="Bookmark" />
-      <ProgressBar fx:id="progress" layoutY="368.0" prefHeight="18.0" prefWidth="600.0" progress="0.0" />
-      <Label fx:id="timer" layoutX="545.0" layoutY="14.0" text="Label" />
-      <Label fx:id="maxMarks" layoutX="51.0" layoutY="22.0" text="Label" />
-      <Button fx:id="finishButton" layoutX="358.0" layoutY="265.0" mnemonicParsing="false" onAction="#onFinishClicked" prefHeight="25.0" prefWidth="76.0" text="Finish" />
+      <RadioButton fx:id="opTwo" layoutX="327.0" layoutY="118.0" mnemonicParsing="false" text="RadioButton" toggleGroup="$optionsGroup" />
+      <RadioButton fx:id="opThree" layoutX="51.0" layoutY="178.0" mnemonicParsing="false" text="RadioButton" toggleGroup="$optionsGroup" />
+      <RadioButton fx:id="opFour" layoutX="327.0" layoutY="178.0" mnemonicParsing="false" text="RadioButton" toggleGroup="$optionsGroup" />
+      <Button fx:id="nextButton" layoutX="57.0" layoutY="323.0" mnemonicParsing="false" onAction="#onNextClicked" prefHeight="25.0" prefWidth="143.0" text="Next" />
+      <Button fx:id="resetButton" layoutX="228.0" layoutY="323.0" mnemonicParsing="false" onAction="#onResetClicked" prefHeight="25.0" prefWidth="70.0" text="Reset" />
+      <Button fx:id="bookmarkButton" layoutX="325.0" layoutY="323.0" mnemonicParsing="false" onAction="#onBookmarkClicked" text="Bookmark" />
+      <ProgressBar fx:id="progress" layoutX="7.0" layoutY="5.0" opacity="0.68" prefHeight="18.0" prefWidth="782.0" progress="0.0" />
+      <Label fx:id="timer" layoutX="559.0" layoutY="42.0" text="Label" textAlignment="CENTER" textFill="#f50707" />
+      <Label fx:id="maxMarks" layoutX="51.0" layoutY="33.0" text="Label" />
+      <Button fx:id="finishButton" layoutX="57.0" layoutY="323.0" mnemonicParsing="false" onAction="#onFinishClicked" prefHeight="25.0" prefWidth="143.0" text="Finish" />
+      <Button fx:id="qTwo" layoutX="677.0" layoutY="73.0" mnemonicParsing="false" onAction="#onQTwoClicked" text="Question 2" />
+      <Button fx:id="qThree" layoutX="677.0" layoutY="106.0" mnemonicParsing="false" onAction="#onQThreeClicked" text="Question 3" />
+      <Button fx:id="qFour" layoutX="677.0" layoutY="142.0" mnemonicParsing="false" onAction="#onQFourClicked" text="Question 4" />
+      <Button fx:id="qFive" layoutX="677.0" layoutY="174.0" mnemonicParsing="false" onAction="#onQFiveClicked" text="Question 5" />
+      <Button fx:id="qSix" layoutX="677.0" layoutY="210.0" mnemonicParsing="false" onAction="#onQSixClicked" text="Question 6" />
+      <Button fx:id="qSeven" layoutX="677.0" layoutY="242.0" mnemonicParsing="false" onAction="#onQSevenClicked" text="Question 7" />
+      <Button fx:id="qEgt" layoutX="677.0" layoutY="275.0" mnemonicParsing="false" onAction="#onQEgtClicked" text="Question 8" />
+      <Button fx:id="qNine" layoutX="677.0" layoutY="311.0" mnemonicParsing="false" onAction="#onQNineClicked" text="Question 9" />
+      <Button fx:id="qTen" layoutX="674.0" layoutY="348.0" mnemonicParsing="false" onAction="#onQTenClicked" text="Question 10" />
+      <Button fx:id="qOne" layoutX="677.0" layoutY="38.0" lineSpacing="1.0" mnemonicParsing="false" onAction="#onQOneClicked" text="Question 1" />
+      <Label layoutX="498.0" layoutY="42.0" text="Time Left:" />
    </children>
 </AnchorPane>

@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class LeaderboardController implements Initializable {
+    public static boolean isDataSaved = false;
     private ObservableList<User> userList;
     @FXML
     private Button backButton;
@@ -42,18 +43,24 @@ public class LeaderboardController implements Initializable {
     }
 
     private void populateData() {
-        name.setCellValueFactory(new PropertyValueFactory<User,String>("name"));
-        rollNo.setCellValueFactory(new PropertyValueFactory<User,String>("rollNo"));
-        score.setCellValueFactory(new PropertyValueFactory<User,String>("score"));
-        timeLeft.setCellValueFactory(new PropertyValueFactory<User,String>("timeLeft"));
+        pos.setCellValueFactory(new PropertyValueFactory<User,Integer>("pos"));
+        name.setCellValueFactory(new PropertyValueFactory<User, String>("name"));
+        rollNo.setCellValueFactory(new PropertyValueFactory<User, String>("rollNo"));
+        score.setCellValueFactory(new PropertyValueFactory<User, String>("score"));
+        timeLeft.setCellValueFactory(new PropertyValueFactory<User, String>("timeLeft"));
         getLeaderboardData();
         leaderboardTable.setItems(userList);
 
-                /*System.out.println("method called");*/
+        /*System.out.println("method called");*/
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        if (QuestionController.isQuizAttempted) {
+            Main.saveDataInLeaderboard();
+            isDataSaved = true;
+        }
+
         getLeaderboardData();
         populateData();
 //todo stop without starting quiz handle exception

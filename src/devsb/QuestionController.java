@@ -11,10 +11,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -29,21 +29,23 @@ public class QuestionController implements Initializable {
     private Timeline timeline;
     // private Integer time = FIVEMIN;
     private ArrayList<Question> questionList = new ArrayList<>();
-    private ArrayList<Integer> bookmarkQ = new ArrayList<>();
-    private int[] userResponse = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+
+    private int[] userResponse = new int[10];
     private String currAns = "0";
+    public static boolean isQuizAttempted = false;
 
     public static int score = 0;
     public static int correctAns = 0;
     public static int wrongAns = 0;
 
+    private Button[] buttonList = new Button[10];
     private final ChangeListener timeCompletionListener = new ChangeListener() {
         @Override
         public void changed(ObservableValue observable, Object oldValue, Object newValue) {
             if (newValue.toString().equals("0")) {
                 if (timeline != null) {
                     timeline.stop();
-                    System.out.println("executed");
+                    //System.out.println("executed");
                 }
                 try {
                     timesUp();
@@ -56,6 +58,8 @@ public class QuestionController implements Initializable {
 
     private IntegerProperty time = new SimpleIntegerProperty(FIVEMIN);
     @FXML
+    private Button qOne, qTwo, qThree, qFour, qFive, qSix, qSeven, qEgt, qNine, qTen;
+    @FXML
     private Label timer, maxMarks, questionNo, question;
     @FXML
     private RadioButton opOne, opTwo, opThree, opFour;
@@ -65,20 +69,111 @@ public class QuestionController implements Initializable {
     private ProgressBar progress;
 
     @FXML
+    protected void onQOneClicked(ActionEvent event) throws Exception {
+        onQButtonClicked(1);
+        //System.out.println(userResponse[0]);
+    }
+
+    @FXML
+    protected void onQTwoClicked(ActionEvent event) throws Exception {
+        onQButtonClicked(2);
+    }
+
+    @FXML
+    protected void onQThreeClicked(ActionEvent event) throws Exception {
+        onQButtonClicked(3);
+        for (int i = 0; i < 10; i++) {
+            // System.out.println("loop" + userResponse[i]);
+        }
+    }
+
+    @FXML
+    protected void onQFourClicked(ActionEvent event) throws Exception {
+        onQButtonClicked(4);
+    }
+
+    @FXML
+    protected void onQFiveClicked(ActionEvent event) throws Exception {
+        onQButtonClicked(5);
+    }
+
+    @FXML
+    protected void onQSixClicked(ActionEvent event) throws Exception {
+        onQButtonClicked(6);
+    }
+
+    @FXML
+    protected void onQSevenClicked(ActionEvent event) throws Exception {
+        onQButtonClicked(7);
+    }
+
+    @FXML
+    protected void onQEgtClicked(ActionEvent event) throws Exception {
+        onQButtonClicked(8);
+    }
+
+    @FXML
+    protected void onQNineClicked(ActionEvent event) throws Exception {
+        onQButtonClicked(9);
+    }
+
+    @FXML
+    protected void onQTenClicked(ActionEvent event) throws Exception {
+        onQButtonClicked(10);
+    }
+
+    @FXML
     protected void onNextClicked(ActionEvent event) throws Exception {
         getUserResponse();
+        resetOptions();
         checkQuestionNo();
+        clearPrevResponseNewQues(currQuestionNo-1);
+        updateProgressBar();
+    }
+
+    private void clearPrevResponseNewQues(int qNo) {
+        int prev = userResponse[qNo];
+        if (prev == 1) {
+            opOne.setSelected(true);
+        } else if (prev == 2) {
+            opTwo.setSelected(true);
+        } else if (prev == 3) {
+            opThree.setSelected(true);
+        } else if (prev == 4) {
+            opFour.setSelected(true);
+        }
+        int res = userResponse[qNo];
+        if (res != 0) {
+            if (res == Integer.parseInt(currAns)) {
+                correctAns--;
+                if ((qNo + 1) <= 4) {
+                    score--;
+                } else if ((qNo + 1) <= 7) {
+                    score -= 2;
+                } else {
+                    score -= 3;
+                }
+            } else {
+                wrongAns--;
+            }
+        }
     }
 
     @FXML
     protected void onResetClicked(ActionEvent event) throws Exception {
-        resetOptions();
+        userResponse[currQuestionNo - 1] = 0;
+        clearPrevResponseNewQues(currQuestionNo-1);
+        resetButtonReset();
+        updateProgressBar();
     }
 
+    //todo correct no and wrong no
     @FXML
     protected void onBookmarkClicked(ActionEvent event) throws Exception {
-        bookmarkQ.add(currQuestionNo);
+        updateQButton(buttonList[currQuestionNo - 1], 'b');
         checkQuestionNo();
+        System.out.println(correctAns + " " + wrongAns);
+        updateProgressBar();
     }
 
     @FXML
@@ -88,9 +183,32 @@ public class QuestionController implements Initializable {
         submitAlert.showAndWait();
         if (submitAlert.getResult() == ButtonType.YES) {
             getUserResponse();
-            openResult(/*event*/);
+            openResult();
         }
 
+    }
+
+    private void onQButtonClicked(int qNo) {
+        getUserResponse();
+        resetOptions();
+        currQuestionNo=qNo-1;
+        checkQuestionNo();
+        clearPrevResponseNewQues(qNo-1);
+        updateProgressBar();
+
+    }
+
+    private void updateQButton(Button button, char cond) {
+        if (cond == 'a') {
+            button.setTextFill(Color.GREEN);
+            button.setText("Attempted");
+        } else if (cond == 'b') {
+            button.setTextFill(Color.YELLOW);
+            button.setText("Bookmarked");
+        } else if (cond == 'u') {
+            button.setTextFill(Color.BLACK);
+            button.setText("Question " + currQuestionNo);
+        }
     }
 
     private void getUserResponse() {
@@ -103,10 +221,17 @@ public class QuestionController implements Initializable {
         } else if (opFour.isSelected()) {
             userResponse[currQuestionNo - 1] = 4;
         }
-        if (String.valueOf(userResponse[currQuestionNo - 1]).equals(currAns)) {
-            checkAns(true);
-        } else if (userResponse[currQuestionNo - 1] != 0) {
-            checkAns(false);
+        if (userResponse[currQuestionNo - 1] != 0) {
+            updateQButton(buttonList[currQuestionNo - 1], 'a');
+
+            if (String.valueOf(userResponse[currQuestionNo - 1]).equals(currAns)) {
+                checkAns(true);
+            } else {
+                checkAns(false);
+            }
+        } else {
+            updateQButton(buttonList[currQuestionNo - 1], 'u');
+
         }
     }
 
@@ -126,19 +251,30 @@ public class QuestionController implements Initializable {
     }
 
     private void resetOptions() {
+
+
         opOne.setSelected(false);
         opTwo.setSelected(false);
         opThree.setSelected(false);
         opFour.setSelected(false);
+
     }
 
-    private void openResult(/*ActionEvent event*/) {
-        System.out.println("open result");
+    private void resetButtonReset() {
+        opOne.setSelected(false);
+        opTwo.setSelected(false);
+        opThree.setSelected(false);
+        opFour.setSelected(false);
+
+    }
+
+    private void openResult() {
+        // System.out.println("open result");
         LoginController lc = new LoginController();
         User userDetails = lc.getNewUser();
         userDetails.setScore(score);
         userDetails.setTimeLeft(String.valueOf(time.getValue().toString()));
-        System.out.println(Integer.parseInt(time.getValue().toString()));
+        //  System.out.println(Integer.parseInt(time.getValue().toString()));
         Parent root;
         try {
 
@@ -157,7 +293,7 @@ public class QuestionController implements Initializable {
     }
 
     private void timesUp() throws Exception {
-        System.out.println("time up");
+        //System.out.println("time up");
         Alert timesUpAlert = new Alert(Alert.AlertType.INFORMATION, "Your time is completed, Click OK to calculate " +
                 "and display the result.", ButtonType.OK);
         timesUpAlert.show();
@@ -165,6 +301,7 @@ public class QuestionController implements Initializable {
     }
 
     private void checkQuestionNo() {
+
         resetOptions();
         if (currQuestionNo < 9) {
             updateQuestionNo();
@@ -173,17 +310,45 @@ public class QuestionController implements Initializable {
         }
     }
 
+    private void checkQuestionNoAndShowResponse() {
+        if (currQuestionNo < 9) {
+            updateQuestionNo();
+            showResponse();
+        } else {
+            lastQuestion();
+            showResponse();
+        }
+    }
+
+    private void showResponse() {
+
+        if (userResponse[currQuestionNo - 1] != 0) {
+            if (userResponse[currQuestionNo - 1] == 1) {
+                opOne.setSelected(true);
+            } else if (userResponse[currQuestionNo - 1] == 2) {
+                opTwo.setSelected(true);
+            } else if (userResponse[currQuestionNo - 1] == 3) {
+                opThree.setSelected(true);
+            } else if (userResponse[currQuestionNo - 1] == 4) {
+                opFour.setSelected(true);
+            }
+
+        }
+    }
+
     private void lastQuestion() {
 
         updateQuestionNo();
         finishButton.setVisible(true);
         nextButton.setVisible(false);
-        updateQuestion();
+    }
+
+    private void updateProgressBar() {
+        progress.setProgress((correctAns + wrongAns) / 10.0);
     }
 
     private void updateQuestionNo() {
         currQuestionNo++;
-        progress.setProgress(currQuestionNo / 11.0);
         questionNo.setText("Question #" + currQuestionNo);
         updateQuestion();
     }
@@ -210,34 +375,10 @@ public class QuestionController implements Initializable {
         String op4 = qObj.getOpFour();
         currAns = qObj.getAns();
         printQuestion(q, op1, op2, op3, op4);
-        /*System.out.println(questionList.get(currQuestionNo).getQues());
-        System.out.println(currQuestionNo);*/
     }
 
 
     private void updateTime() {
-/*  time = FIVEMIN;
-        timer.setText(time.toString());
-        timeline = new Timeline();
-        timeline.setCycleCount(Timeline.INDEFINITE);
-        timeline.getKeyFrames().add(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                time--;
-                int temp = time % 60;
-                timer.setText((time / 60) + ":" + (temp > 10 ? temp : "0" + temp));
-                if (time <= 0) {
-                    try {
-                        timesUp(event);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                    timeline.stop();
-                }
-            }
-        }));
-        timeline.playFromStart();*//*
-         */
         time.set(FIVEMIN);
         timeline = new Timeline();
         timeline.getKeyFrames().add(
@@ -254,6 +395,30 @@ public class QuestionController implements Initializable {
         opTwo.setText(op2);
         opThree.setText(op3);
         opFour.setText(op4);
+        showMarks();
+    }
+
+    private void createButtonList() {
+        buttonList[0] = qOne;
+        buttonList[1] = qTwo;
+        buttonList[2] = qThree;
+        buttonList[3] = qFour;
+        buttonList[4] = qFive;
+        buttonList[5] = qSix;
+        buttonList[6] = qSeven;
+        buttonList[7] = qEgt;
+        buttonList[8] = qNine;
+        buttonList[9] = qTen;
+    }
+
+    private void showMarks() {
+        if (currQuestionNo <= 4) {
+            maxMarks.setText("Marks: 1");
+        } else if (currQuestionNo <= 7) {
+            maxMarks.setText("Marks: 2");
+        } else {
+            maxMarks.setText("Marks: 3");
+        }
     }
 
     @Override
@@ -267,6 +432,10 @@ public class QuestionController implements Initializable {
         updateQuestionNo();
         timer.textProperty().bind(time.asString());
         time.addListener(timeCompletionListener);
+        createButtonList();
         updateTime();
+        progress.setProgress(0);
+        isQuizAttempted = true;
     }
+
 }
