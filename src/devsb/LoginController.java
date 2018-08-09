@@ -20,24 +20,30 @@ public class LoginController {
     @FXML
     private TextField nameField, rollNoField;
 
+    private static User newUser;
+
     @FXML
     protected void onStartClicked(ActionEvent event) throws Exception {
         try {
             if (checkInput()) {
-                name=nameField.getText().trim();
-                rollNo=rollNoField.getText().trim().toLowerCase();
+                newUser = new User();
+                newUser.setName(nameField.getText().trim());
+                newUser.setRollNo(rollNoField.getText().trim().toLowerCase());
                 openInstruction(event);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+//todo find position to save the data:
+
 
     @FXML
     protected void onLeaderboardClicked(ActionEvent event) throws Exception {
         nameField.setText("");
         rollNoField.setText("");
         openleaderboard();
+
     }
     //todo: if exit before completion save data in database.
 
@@ -67,7 +73,8 @@ public class LoginController {
             e.printStackTrace();
         }
     }
-//todo: stringproperty can update data in realtime and also a listener can be attached with it
+
+    //todo: stringproperty can update data in realtime and also a listener can be attached with it
     private boolean checkInput() {
         if (!nameField.getText().isEmpty() && !rollNoField.getText().isEmpty()) {
             System.out.println("not empty");
@@ -83,5 +90,9 @@ public class LoginController {
             return false;
         }
         return true;
+    }
+
+    public User getNewUser() {
+        return newUser;
     }
 }

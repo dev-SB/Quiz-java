@@ -1125,7 +1125,7 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="283" parent="279" name="rollno">
+    <column id="283" parent="279" name="roll_no">
       <Position>3</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
@@ -1140,8 +1140,7 @@
     </column>
     <column id="285" parent="279" name="time">
       <Position>5</Position>
-      <DataType>time|0s</DataType>
-      <NotNull>1</NotNull>
+      <DataType>varchar(5)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <key id="286" parent="279" name="PRIMARY">
