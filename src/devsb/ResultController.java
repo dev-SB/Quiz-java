@@ -68,7 +68,7 @@ public class ResultController implements Initializable {
     }
 
     private void createPieChart(int correctAns, int wrongAns) {
-        System.out.println("pie chart");
+
         ObservableList<PieChart.Data> ansPieChartData = FXCollections.observableArrayList(
                 new PieChart.Data("Correct", (double) correctAns),
                 new PieChart.Data("Wrong", (double) wrongAns),

@@ -78,7 +78,6 @@ public class LoginController {
 
     private boolean checkInput() {
         if (!nameField.getText().isEmpty() && !rollNoField.getText().isEmpty()) {
-            System.out.println("not empty");
             if (!nameField.getText().trim().contains(" ")) {
                 Alert fullNameAlert = new Alert(Alert.AlertType.ERROR, "Please enter Full Name", ButtonType.OK);
                 fullNameAlert.showAndWait();

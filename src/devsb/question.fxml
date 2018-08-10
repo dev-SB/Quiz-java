@@ -10,7 +10,7 @@
 <AnchorPane prefHeight="400.0" prefWidth="699.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="devsb.QuestionController">
    <children>
       <Label fx:id="questionNo" layoutX="51.0" layoutY="68.0" text="Label" />
-      <Label fx:id="question" layoutX="127.0" layoutY="68.0" text="Label" />
+      <Label fx:id="question" layoutX="127.0" layoutY="68.0" text="Label" wrapText="true" />
       <RadioButton fx:id="opOne" layoutX="51.0" layoutY="118.0" mnemonicParsing="false" text="RadioButton">
          <toggleGroup>
             <ToggleGroup fx:id="optionsGroup" />

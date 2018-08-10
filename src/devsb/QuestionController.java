@@ -25,9 +25,9 @@ import java.util.ResourceBundle;
 
 public class QuestionController implements Initializable {
     private int currQuestionNo = 0;
-    private static final int FIVEMIN = 120;
+    private static final int TIME = 120;
     private Timeline timeline;
-    // private Integer time = FIVEMIN;
+
     private ArrayList<Question> questionList = new ArrayList<>();
 
     private int[] userResponse = new int[10];
@@ -45,7 +45,6 @@ public class QuestionController implements Initializable {
             if (newValue.toString().equals("0")) {
                 if (timeline != null) {
                     timeline.stop();
-                    //System.out.println("executed");
                 }
                 try {
                     timesUp();
@@ -56,7 +55,7 @@ public class QuestionController implements Initializable {
         }
     };
 
-    private IntegerProperty time = new SimpleIntegerProperty(FIVEMIN);
+    private IntegerProperty time = new SimpleIntegerProperty(TIME);
     @FXML
     private Button qOne, qTwo, qThree, qFour, qFive, qSix, qSeven, qEgt, qNine, qTen;
     @FXML
@@ -71,7 +70,7 @@ public class QuestionController implements Initializable {
     @FXML
     protected void onQOneClicked(ActionEvent event) throws Exception {
         onQButtonClicked(1);
-        //System.out.println(userResponse[0]);
+
     }
 
     @FXML
@@ -82,9 +81,6 @@ public class QuestionController implements Initializable {
     @FXML
     protected void onQThreeClicked(ActionEvent event) throws Exception {
         onQButtonClicked(3);
-        for (int i = 0; i < 10; i++) {
-            // System.out.println("loop" + userResponse[i]);
-        }
     }
 
     @FXML
@@ -130,7 +126,7 @@ public class QuestionController implements Initializable {
         clearPrevResponseNewQues(currQuestionNo - 1);
         updateProgressBar();
     }
-//todo reset doesnt decrease count
+
     private void clearPrevResponseNewQues(int qNo) {
         int prev = userResponse[qNo];
         if (prev == 1) {
@@ -173,7 +169,7 @@ public class QuestionController implements Initializable {
     protected void onBookmarkClicked(ActionEvent event) throws Exception {
         updateQButton(buttonList[currQuestionNo - 1], 'b');
         checkQuestionNo();
-        System.out.println(correctAns + " " + wrongAns);
+
         updateProgressBar();
 
     }
@@ -268,12 +264,12 @@ public class QuestionController implements Initializable {
 
 
     private void openResult() {
-        // System.out.println("open result");
+
         LoginController lc = new LoginController();
         User userDetails = lc.getNewUser();
         userDetails.setScore(score);
         userDetails.setTimeLeft(String.valueOf(time.getValue().toString()));
-        //  System.out.println(Integer.parseInt(time.getValue().toString()));
+
         Parent root;
         try {
 
@@ -292,7 +288,6 @@ public class QuestionController implements Initializable {
     }
 
     private void timesUp() throws Exception {
-        //System.out.println("time up");
         Alert timesUpAlert = new Alert(Alert.AlertType.INFORMATION, "Your time is completed, Click OK to calculate " +
                 "and display the result.", ButtonType.OK);
         timesUpAlert.show();
@@ -304,7 +299,7 @@ public class QuestionController implements Initializable {
         resetOptions();
         if (currQuestionNo < 9) {
             updateQuestionNo();
-        } else {
+        } else if(currQuestionNo==9){
             lastQuestion();
         }
     }
@@ -352,10 +347,10 @@ public class QuestionController implements Initializable {
 
 
     private void updateTime() {
-        time.set(FIVEMIN);
+        time.set(TIME);
         timeline = new Timeline();
         timeline.getKeyFrames().add(
-                new KeyFrame(Duration.seconds(FIVEMIN + 1),
+                new KeyFrame(Duration.seconds(TIME + 1),
                         new KeyValue(time, 0)));
         timeline.playFromStart();
 

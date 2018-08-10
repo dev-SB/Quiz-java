@@ -17,17 +17,11 @@ public class LeaderboardController implements Initializable {
     public static boolean isDataSaved = false;
     private ObservableList<User> userList;
     @FXML
-    private Button backButton;
-    @FXML
     private TableColumn name, rollNo, score, pos, timeLeft;
     @FXML
     private TableView leaderboardTable;
 
-    //todo query database for leaderboard only once.
-    @FXML
-    protected void onBackClicked(ActionEvent event) {
 
-    }
 
     private void getLeaderboardData() {
         try {
@@ -51,12 +45,12 @@ public class LeaderboardController implements Initializable {
         getLeaderboardData();
         leaderboardTable.setItems(userList);
 
-        /*System.out.println("method called");*/
+
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        if (QuestionController.isQuizAttempted) {
+        if (QuestionController.isQuizAttempted && !isDataSaved) {
             Main.saveDataInLeaderboard();
             isDataSaved = true;
         }

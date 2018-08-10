@@ -30,7 +30,7 @@ public class Main extends Application {
     public static void saveDataInLeaderboard() {
         LoginController lc = new LoginController();
         User userDetails = lc.getNewUser();
-        System.out.println("print" + userDetails.getName() + userDetails.getRollNo());
+
         saveUserData(userDetails.getName(), userDetails.getRollNo(), userDetails.getScore(), userDetails.getTimeLeft());
     }
 
@@ -38,7 +38,7 @@ public class Main extends Application {
         try {
             userData = new UserData("com.mysql.jdbc.Driver", "jdbc:mysql" +
                     "://localhost:3306/quiz?useSSL=false", "root", "root");
-            System.out.println("save user data" + name + " " + rollNo);
+
             userData.addData(name, rollNo, score, time);
 
         } catch (Exception e) {
