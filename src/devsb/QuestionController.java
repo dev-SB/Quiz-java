@@ -127,10 +127,10 @@ public class QuestionController implements Initializable {
         getUserResponse();
         resetOptions();
         checkQuestionNo();
-        clearPrevResponseNewQues(currQuestionNo-1);
+        clearPrevResponseNewQues(currQuestionNo - 1);
         updateProgressBar();
     }
-
+//todo reset doesnt decrease count
     private void clearPrevResponseNewQues(int qNo) {
         int prev = userResponse[qNo];
         if (prev == 1) {
@@ -162,18 +162,20 @@ public class QuestionController implements Initializable {
     @FXML
     protected void onResetClicked(ActionEvent event) throws Exception {
         userResponse[currQuestionNo - 1] = 0;
-        clearPrevResponseNewQues(currQuestionNo-1);
-        resetButtonReset();
+        clearPrevResponseNewQues(currQuestionNo - 1);
+        resetOptions();
+        updateQButton(buttonList[currQuestionNo-1],'u');
         updateProgressBar();
     }
 
-    //todo correct no and wrong no
+
     @FXML
     protected void onBookmarkClicked(ActionEvent event) throws Exception {
         updateQButton(buttonList[currQuestionNo - 1], 'b');
         checkQuestionNo();
         System.out.println(correctAns + " " + wrongAns);
         updateProgressBar();
+
     }
 
     @FXML
@@ -182,8 +184,12 @@ public class QuestionController implements Initializable {
                 ButtonType.YES, ButtonType.NO);
         submitAlert.showAndWait();
         if (submitAlert.getResult() == ButtonType.YES) {
+            if (timeline != null) {
+                timeline.stop();
+            }
             getUserResponse();
             openResult();
+
         }
 
     }
@@ -191,9 +197,9 @@ public class QuestionController implements Initializable {
     private void onQButtonClicked(int qNo) {
         getUserResponse();
         resetOptions();
-        currQuestionNo=qNo-1;
+        currQuestionNo = qNo - 1;
         checkQuestionNo();
-        clearPrevResponseNewQues(qNo-1);
+        clearPrevResponseNewQues(qNo - 1);
         updateProgressBar();
 
     }
@@ -203,7 +209,7 @@ public class QuestionController implements Initializable {
             button.setTextFill(Color.GREEN);
             button.setText("Attempted");
         } else if (cond == 'b') {
-            button.setTextFill(Color.YELLOW);
+            button.setTextFill(Color.rgb(204,153,0));
             button.setText("Bookmarked");
         } else if (cond == 'u') {
             button.setTextFill(Color.BLACK);
@@ -260,13 +266,6 @@ public class QuestionController implements Initializable {
 
     }
 
-    private void resetButtonReset() {
-        opOne.setSelected(false);
-        opTwo.setSelected(false);
-        opThree.setSelected(false);
-        opFour.setSelected(false);
-
-    }
 
     private void openResult() {
         // System.out.println("open result");
@@ -280,8 +279,8 @@ public class QuestionController implements Initializable {
 
             root = FXMLLoader.load(getClass().getResource("result.fxml"));
             Stage resultStage = new Stage();
-            resultStage.setTitle("Leaderboard");
-            resultStage.setScene(new Scene(root, 400, 400));
+            resultStage.setTitle("Result");
+            resultStage.setScene(new Scene(root, 800, 400));
             resultStage.show();
             Stage stage = (Stage) nextButton.getScene().getWindow();
             stage.close();
@@ -307,32 +306,6 @@ public class QuestionController implements Initializable {
             updateQuestionNo();
         } else {
             lastQuestion();
-        }
-    }
-
-    private void checkQuestionNoAndShowResponse() {
-        if (currQuestionNo < 9) {
-            updateQuestionNo();
-            showResponse();
-        } else {
-            lastQuestion();
-            showResponse();
-        }
-    }
-
-    private void showResponse() {
-
-        if (userResponse[currQuestionNo - 1] != 0) {
-            if (userResponse[currQuestionNo - 1] == 1) {
-                opOne.setSelected(true);
-            } else if (userResponse[currQuestionNo - 1] == 2) {
-                opTwo.setSelected(true);
-            } else if (userResponse[currQuestionNo - 1] == 3) {
-                opThree.setSelected(true);
-            } else if (userResponse[currQuestionNo - 1] == 4) {
-                opFour.setSelected(true);
-            }
-
         }
     }
 

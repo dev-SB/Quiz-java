@@ -36,7 +36,7 @@ public class LoginController {
             e.printStackTrace();
         }
     }
-//todo find position to save the data:
+
 
 
     @FXML
@@ -46,7 +46,7 @@ public class LoginController {
         openleaderboard();
 
     }
-    //todo: if exit before completion save data in database.
+
 
     private void openleaderboard() {
         Parent root;
@@ -75,7 +75,7 @@ public class LoginController {
         }
     }
 
-    //todo: stringproperty can update data in realtime and also a listener can be attached with it
+
     private boolean checkInput() {
         if (!nameField.getText().isEmpty() && !rollNoField.getText().isEmpty()) {
             System.out.println("not empty");

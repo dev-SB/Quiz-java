@@ -18,13 +18,13 @@
       <RadioButton fx:id="opTwo" layoutX="327.0" layoutY="118.0" mnemonicParsing="false" text="RadioButton" toggleGroup="$optionsGroup" />
       <RadioButton fx:id="opThree" layoutX="51.0" layoutY="178.0" mnemonicParsing="false" text="RadioButton" toggleGroup="$optionsGroup" />
       <RadioButton fx:id="opFour" layoutX="327.0" layoutY="178.0" mnemonicParsing="false" text="RadioButton" toggleGroup="$optionsGroup" />
-      <Button fx:id="nextButton" layoutX="57.0" layoutY="323.0" mnemonicParsing="false" onAction="#onNextClicked" prefHeight="25.0" prefWidth="143.0" text="Next" />
+      <Button fx:id="nextButton" defaultButton="true" layoutX="57.0" layoutY="323.0" mnemonicParsing="false" onAction="#onNextClicked" prefHeight="25.0" prefWidth="143.0" text="Next" />
       <Button fx:id="resetButton" layoutX="228.0" layoutY="323.0" mnemonicParsing="false" onAction="#onResetClicked" prefHeight="25.0" prefWidth="70.0" text="Reset" />
       <Button fx:id="bookmarkButton" layoutX="325.0" layoutY="323.0" mnemonicParsing="false" onAction="#onBookmarkClicked" text="Bookmark" />
       <ProgressBar fx:id="progress" layoutX="7.0" layoutY="5.0" opacity="0.68" prefHeight="18.0" prefWidth="782.0" progress="0.0" />
       <Label fx:id="timer" layoutX="559.0" layoutY="42.0" text="Label" textAlignment="CENTER" textFill="#f50707" />
       <Label fx:id="maxMarks" layoutX="51.0" layoutY="33.0" text="Label" />
-      <Button fx:id="finishButton" layoutX="57.0" layoutY="323.0" mnemonicParsing="false" onAction="#onFinishClicked" prefHeight="25.0" prefWidth="143.0" text="Finish" />
+      <Button fx:id="finishButton" defaultButton="true" layoutX="57.0" layoutY="323.0" mnemonicParsing="false" onAction="#onFinishClicked" prefHeight="25.0" prefWidth="143.0" text="Finish" />
       <Button fx:id="qTwo" layoutX="677.0" layoutY="73.0" mnemonicParsing="false" onAction="#onQTwoClicked" text="Question 2" />
       <Button fx:id="qThree" layoutX="677.0" layoutY="106.0" mnemonicParsing="false" onAction="#onQThreeClicked" text="Question 3" />
       <Button fx:id="qFour" layoutX="677.0" layoutY="142.0" mnemonicParsing="false" onAction="#onQFourClicked" text="Question 4" />

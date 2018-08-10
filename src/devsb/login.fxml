@@ -20,12 +20,12 @@
       <RowConstraints />
    </rowConstraints>
    <children>
-      <Label text="Label" GridPane.columnIndex="2" />
+      <Label text="LOGIN" GridPane.columnIndex="2" />
       <Label text="Name" GridPane.rowIndex="1" />
       <Label text="Roll Number" GridPane.rowIndex="2" />
       <TextField fx:id="nameField" GridPane.columnIndex="2" GridPane.rowIndex="1" />
       <TextField fx:id="rollNoField" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-      <Button fx:id="startButton" mnemonicParsing="false" onAction="#onStartClicked" text="Start" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <Button fx:id="startButton" defaultButton="true" mnemonicParsing="false" onAction="#onStartClicked" text="Start" GridPane.columnIndex="1" GridPane.rowIndex="3" />
       <Button fx:id="leaderboardButton" mnemonicParsing="false" onAction="#onLeaderboardClicked" text="Leaderboard" GridPane.columnIndex="2" GridPane.rowIndex="3" />
    </children>
 </GridPane>

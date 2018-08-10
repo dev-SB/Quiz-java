@@ -63,7 +63,6 @@ public class LeaderboardController implements Initializable {
 
         getLeaderboardData();
         populateData();
-//todo stop without starting quiz handle exception
-        //todo change public variables to private and use get and set
+
     }
 }
