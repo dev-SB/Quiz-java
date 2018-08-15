@@ -25,7 +25,7 @@ import java.util.ResourceBundle;
 
 public class QuestionController implements Initializable {
     private int currQuestionNo = 0;
-    private static final int TIME = 120;
+    private static final int TOTALTIME = 120;
     private Timeline timeline;
 
     private ArrayList<Question> questionList = new ArrayList<>();
@@ -55,7 +55,7 @@ public class QuestionController implements Initializable {
         }
     };
 
-    private IntegerProperty time = new SimpleIntegerProperty(TIME);
+    private IntegerProperty time = new SimpleIntegerProperty(TOTALTIME);
     @FXML
     private Button qOne, qTwo, qThree, qFour, qFive, qSix, qSeven, qEgt, qNine, qTen;
     @FXML
@@ -347,10 +347,10 @@ public class QuestionController implements Initializable {
 
 
     private void updateTime() {
-        time.set(TIME);
+        time.set(TOTALTIME);
         timeline = new Timeline();
         timeline.getKeyFrames().add(
-                new KeyFrame(Duration.seconds(TIME + 1),
+                new KeyFrame(Duration.seconds(TOTALTIME + 1),
                         new KeyValue(time, 0)));
         timeline.playFromStart();
 

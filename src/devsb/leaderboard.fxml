@@ -12,7 +12,7 @@
           <TableColumn fx:id="name" prefWidth="193.0" text="Name" />
             <TableColumn fx:id="rollNo" prefWidth="143.0" text="Roll Number" />
             <TableColumn fx:id="score" prefWidth="49.0" text="Score" />
-            <TableColumn fx:id="timeLeft" prefWidth="105.0" text="Time Left" />
+            <TableColumn fx:id="timeLeft" prefWidth="105.0" text="Time Left (sec)" />
         </columns>
       </TableView>
    </children>

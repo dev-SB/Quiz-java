@@ -24,7 +24,6 @@ public class UserData {
 
     public void addData(String name, String rollNo, int score, String time) throws SQLException {
         try {
-            System.out.println("add data");
             Statement statement = connection.createStatement();
             statement.execute("insert into leaderboard (name, roll_no, score, time) values ('"+name+"','"+rollNo+"'," +
                     "'"+score+"','"+time+"');");
